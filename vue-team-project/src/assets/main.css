@@ -1,0 +1,268 @@
+/* Global CSS Variables */
+:root {
+  --primary-red: #E63946;
+  /* Vibrant Red for food/accents */
+  --primary-red-dark: #C1121F;
+  /* Deep Red for hover/headers */
+  --primary-orange: #F4A261;
+  /* Warm Orange for sub-accents */
+  --background-cream: #F1FAEE;
+  /* Soft Cream for page backgrounds */
+  --surface-white: #ffffff;
+  --text-navy: #1D3557;
+  /* Deep Navy for high contrast text */
+  --text-muted: #457B9D;
+  /* Muted Blue/Teal for secondary text */
+  --text-light: #ffffff;
+  --border-subtle: #A8DADC;
+  /* Light Teal for borders */
+  --border-active: #E63946;
+  --shadow-sm: 0 1px 3px rgba(29, 53, 87, 0.1);
+  --shadow-md: 0 4px 6px rgba(29, 53, 87, 0.08);
+  --shadow-lg: 0 10px 15px rgba(230, 57, 70, 0.15);
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--background-cream);
+  color: var(--text-navy);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 1024px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+/* Common Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background-color: var(--primary-red);
+  color: var(--text-light);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-red-dark);
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: var(--text-light);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: var(--text-light);
+}
+
+.btn-outline {
+  background-color: white;
+  border: 2px solid var(--primary-red);
+  color: var(--primary-red);
+}
+
+.btn-outline:hover {
+  background-color: var(--background-cream);
+  border-color: var(--primary-red-dark);
+  color: var(--primary-red-dark);
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--surface-white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Flex Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+/* Spacing Utilities */
+.p-1 {
+  padding: 8px;
+}
+
+.p-2 {
+  padding: 16px;
+}
+
+.p-3 {
+  padding: 24px;
+}
+
+.p-4 {
+  padding: 32px;
+}
+
+.m-1 {
+  margin: 8px;
+}
+
+.m-2 {
+  margin: 16px;
+}
+
+.m-3 {
+  margin: 24px;
+}
+
+.m-4 {
+  margin: 32px;
+}
+
+.mt-1 {
+  margin-top: 8px;
+}
+
+.mt-2 {
+  margin-top: 16px;
+}
+
+.mt-3 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 8px;
+}
+
+.mb-2 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 24px;
+}
+
+/* Text Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 90%;
+  max-height: 90%;
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
